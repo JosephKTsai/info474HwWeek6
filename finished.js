@@ -85,10 +85,10 @@
     let countryData = allYearsData.filter((row) => row["location"] == selectedCountry);
 
     // Get all the years for the given country
-    let timeData = countryData.map((row) => row["time"]);
+    let timeData = countryData.map((row) => +row["time"]);
 
     // Get the population data for the given country
-    let populationData = countryData.map((row) => row["pop_mlns"]);
+    let populationData = countryData.map((row) => +row["pop_mlns"]);
 
     let minMax = findMinMax(timeData, populationData)
 
